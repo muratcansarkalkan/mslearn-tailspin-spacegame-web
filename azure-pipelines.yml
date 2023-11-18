@@ -15,14 +15,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-
-steps:
-- task: UseDotNet@2
-  displayName: 'Use .NET SDK 6.x'
-  inputs:
-    packageType: sdk
-    version: '6.x'
-
+  
 steps:
 # Switches to .NET 6
 - task: UseDotNet@2
