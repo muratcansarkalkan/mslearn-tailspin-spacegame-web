@@ -3,14 +3,25 @@
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
+# git checkout -B build-pipeline -> switches to a brand spanking new branch
+# git push origin build-pipeline -> pushes to that branch
+
+# You also need to enable trigger for the branch. It was -main, so only main branch was trgigered.
 trigger:
-- main
+- '*'
 
 pool:
   vmImage: ubuntu-latest
 
 variables:
   buildConfiguration: 'Release'
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Use .NET SDK 6.x'
+  inputs:
+    packageType: sdk
+    version: '6.x'
 
 steps:
 # Switches to .NET 6
