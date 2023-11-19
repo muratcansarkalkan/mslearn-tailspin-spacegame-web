@@ -78,3 +78,5 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
+
+# The best commit messages complete the sentence, "If you apply this commit, you will ..."
