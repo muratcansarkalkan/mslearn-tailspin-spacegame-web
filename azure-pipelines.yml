@@ -8,10 +8,12 @@
 
 # You also need to enable trigger for the branch. It was -main, so only main branch was trgigered.
 trigger:
-- '*'
+  branches:
+    include:
+      - '*'
   paths:
     exclude:
-    - '**/README.md'
+      - "README.md"
 
 pool:
   vmImage: ubuntu-latest
